@@ -22,7 +22,11 @@
 
   <div class="mb-3">
     <label for="Creator" class="form-label">Post Creator</label>
-    <input name='creator' type="text" class="form-control" id="Creator" require>
+    <select class="form-select" aria-label="Default select example">
+      @foreach ($users as $user)
+      <option value="{{$user->id}}">{{$user->name}}</option>
+      @endforeach
+    </select>  
   </div>
   
 

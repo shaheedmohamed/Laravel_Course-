@@ -24,18 +24,13 @@
     <div class="card mt-5">
         <h5 class="card-header">Post info</h5>
         <div class="card-body">
-            <h5 class="card-title">Title : {{$post['id']}} </h5>
-            <p class="card-text">Description : {{$post['Description']}} </p>
+            <h5 class="card-title">Id : {{$post['id']}} </h5>
+            <h5 class="card-title">Title : {{$post['title']}} </h5>
+            <p class="card-text">Description : {{$post['description']}} </p>
+            <p class="card-text">Posted Py : {{$post['posted_by']}} </p>
         </div>
     </div>
-    <div class="card mt-5">
-        <h5 class="card-header">Post Creator info</h5>
-        <div class="card-body">
-            <h5 class="card-title">Name : {{$post['Psted_by']}} </h5>
-            <p class="card-text">Email : {{$post['email']}} </p>
-            <p class="card-text">Created At : {{$post['created_at']}} </p>
-        </div>
-    </div>
+    
 
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>all Posts</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -30,8 +30,8 @@
         <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
+        <th scope="col">description</th>
         <th scope="col">POsted By</th>
-        <th scope="col">Created At</th>
         <th scope="col">Action</th>
         </tr>
     </thead>
@@ -40,8 +40,8 @@
         <tr>
         <td>{{$posts['id']}}</td>
         <td>{{$posts['title']}}</td>
-        <td>{{$posts['Psted_by']}}</td>
-        <td>{{$posts['created_at']}}</td>
+        <td>{{$posts['description']}}</td>
+        <td>{{$posts['posted_by']}}</td>
         <td>
             <a href="{{route('posts.show',$posts['id'])}}" class="btn btn-primary">View</a>
             <a href="#" class="btn btn-success">Edit</a>
