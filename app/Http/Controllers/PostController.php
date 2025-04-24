@@ -24,6 +24,7 @@ class PostController extends Controller
     {
         $users= User::all();
         return view('Create.index', ['users' => $users]);
+        // return view('Create.index');
     }
     public function store()
     {
