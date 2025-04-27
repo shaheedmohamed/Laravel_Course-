@@ -38,27 +38,33 @@
 
         <table class="table table-bordered table-striped">
             <thead>
-            <tr>
-        <th>Task Name</th>
-        <th>Duration</th>
-        <th>Priority</th>
-        <th>Actual Duration</th>
-        <th>Actions</th>
-    </tr>
-</thead>
-<tbody>
-    @foreach($tasks as $task)
-        <tr id="task-{{ $task->id }}">
+                
+                <tr>
+                    <th>Task Name</th>
+                    <th>Duration</th>
+                    <th>Priority</th>
+                    <th>Actual Duration</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($tasks as $task)
+                
+                @if (!$loop->first)
+                <tr id="task-{{ $task->id }}">
             <td class="task-name {{ $task->is_finished ? 'finished' : '' }}">{{ $task->task_name }}</td>
             <td class="task-duration {{ $task->is_finished ? 'finished' : '' }}">{{ $task->duration }}</td>
             <td class="task-priority {{ $task->is_finished ? 'finished' : '' }}">{{ $task->priority }}</td>
             <td>{{ $task->actual_duration ?? '-' }}</td>
-                        <td>
-                            <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="{{ route('tasks.destroy', $task->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
-                            <button class="btn btn-info" onclick="startTimer('{{ $task->task_name }}')">Start</button>
-                        </td>
-                    </tr>
+            <td>
+                
+                <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-sm btn-warning">Edit</a>
+        <a href="{{ route('tasks.destroy', $task->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+        <button class="btn btn-info ms-4" onclick="startTimer('{{ $task->task_name }}')">Start</button>
+        
+    </td>
+</tr>
+@endif
                 @endforeach
             </tbody>
         </table>

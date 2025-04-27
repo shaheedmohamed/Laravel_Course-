@@ -50,13 +50,11 @@ class TaskController extends Controller
     }
 
     public function finish($id)
-{
-    $task = Task::findOrFail($id);
-    $task->is_finished = true;
-    $task->actual_duration = request()->input('actual_duration') ?? $task->actual_duration;
-    $task->save();
+    {
+        $task              = Task::findOrFail($id);
+        $task->is_finished = true;
+        $task->save();
 
-    return redirect()->route('tasks.index')->with('success', 'Task marked as finished.');
-}
-
+        return redirect()->route('tasks.index');
+    }
 }
